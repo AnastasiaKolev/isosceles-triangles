@@ -46,7 +46,7 @@ public class IsoscelesTriangles {
 
         // Проверка на равнобедренность
         if (preLine1 == preLine2 || preLine1 == preLine3 || preLine2 == preLine3) {
-            // Если треугольник равнобедненный, то вычисляем длину и площадь
+            // Если треугольник равнобедненный, то вычисляем длину линий и площадь
             double line1 = getLineLength( preLine1 );
             double line2 = getLineLength( preLine2 );
             double line3 = getLineLength( preLine3 );
