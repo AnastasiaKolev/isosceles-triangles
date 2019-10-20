@@ -44,7 +44,9 @@ public class IsoscelesTriangles {
         int preLine2 = getPreLength( res[0] - res[1], res[4] - res[5] );
         int preLine3 = getPreLength( res[2] - res[3], res[4] - res[5] );
 
+        // Проверка на равнобедренность
         if (preLine1 == preLine2 || preLine1 == preLine3 || preLine2 == preLine3) {
+            // Если треугольник равнобедненный, то вычисляем длину и площадь
             double line1 = getLineLength( preLine1 );
             double line2 = getLineLength( preLine2 );
             double line3 = getLineLength( preLine3 );
@@ -57,6 +59,8 @@ public class IsoscelesTriangles {
                 curSquare = calcSquare( line2, line1 );
             }
 
+            // Определяем маскимальную площадь в сравнении с текущей
+            // Если площадь больше, то обновляем значение
             if (updateMaxSquare()) {
                 coordsMax = statement;
             }
@@ -72,12 +76,12 @@ public class IsoscelesTriangles {
     }
 
     public static void main(String[] args) {
-        // check command line arguments
+        // Проверка аргументов командной строки
         if (args.length != 2) {
             System.out.println( "Wrong Arguments count. Usage: IsoscelesTriangles <in.txt> <out.txt>" );
         }
 
-        // read the input file by lines
+        // Считываем входной файл args[0] построчно
         try (Stream<String> stream = Files.lines( Paths.get( args[0] ) )) {
             stream.forEach( IsoscelesTriangles::evaluate );
         } catch (IOException e) {
@@ -85,7 +89,7 @@ public class IsoscelesTriangles {
             e.printStackTrace();
         }
 
-        // write to output file
+        // Записываем координаты треугольника с наибольшей площадью в выходной файл args[1]
         try {
             PrintWriter writer = new PrintWriter( args[1], StandardCharsets.UTF_8 );
             writer.println( coordsMax );
