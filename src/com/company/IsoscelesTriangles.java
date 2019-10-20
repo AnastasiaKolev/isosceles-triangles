@@ -39,7 +39,7 @@ public class IsoscelesTriangles {
             }
         }
 
-        // Не берем корень, чтобы были только целые числа для сравнения
+        // Не берем корень, чтобы были только целые числа для сравнения линий
         int preLine1 = getPreLength( res[0] - res[1], res[2] - res[3] );
         int preLine2 = getPreLength( res[0] - res[1], res[4] - res[5] );
         int preLine3 = getPreLength( res[2] - res[3], res[4] - res[5] );
