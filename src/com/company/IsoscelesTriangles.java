@@ -78,7 +78,7 @@ public class IsoscelesTriangles {
     public static void main(String[] args) {
         // Проверка аргументов командной строки
         if (args.length != 2) {
-            System.out.println( "Wrong Arguments count. Usage: IsoscelesTriangles <in.txt> <out.txt>" );
+            System.out.println( "Wrong Arguments count. Usage: java src/com/company/IsoscelesTriangles.java <in.txt> <out.txt>" );
         }
 
         // Считываем входной файл args[0] построчно
