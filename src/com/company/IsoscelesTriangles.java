@@ -85,7 +85,7 @@ public class IsoscelesTriangles {
         try (Stream<String> stream = Files.lines( Paths.get( args[0] ) )) {
             stream.forEach( IsoscelesTriangles::evaluate );
         } catch (IOException e) {
-            System.out.print( "Failed to read " + args[0]);
+            System.out.println( "Failed to read " + args[0]);
             e.printStackTrace();
         }
 
@@ -95,7 +95,7 @@ public class IsoscelesTriangles {
             writer.println( coordsMax );
             writer.close();
         } catch (IOException e) {
-            System.out.print( "Failed to write " + args[1]);
+            System.out.println( "Failed to write " + args[1]);
             e.printStackTrace();
         }
     }
